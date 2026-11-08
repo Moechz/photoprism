@@ -1,0 +1,123 @@
+{
+  "app_id": "photoprismdocker",
+  "title": "PhotoPrism",
+  "image": "photoprism/photoprism:261029",
+  "repo_name": "photoprism",
+  "github_repo": "photoprism",
+  "mode": "wrapper",
+  "entrypoint_file": "specs/photoprism-entrypoint.sh",
+  "wrapper_note": "PhotoPrism only creates its first administrator when PHOTOPRISM_ADMIN_PASSWORD\nis set. The wrapper generates a random password once, stores it in the mounted\nstorage volume, prints it to the log, then hands over to the image's original\n/init. It is not a privilege wrapper: the container still runs as uid 1000 and\nthe upstream image is unmodified.\n",
+  "wrapper_note_readme": "- **Admin password bootstrap.** PhotoPrism refuses to create the first admin without `PHOTOPRISM_ADMIN_PASSWORD`. `src/entrypoint.sh` generates a random password once, stores it in `storage/admin-password.txt`, prints it to `docker logs`, and then execs the image's original `/init`. The container still runs as uid 1000.",
+  "container_port": 2342,
+  "host_port": 8022,
+  "category": [
+    "Photography_Video"
+  ],
+  "user": "1000:1000",
+  "volumes": [
+    {
+      "host": "/Volume1/DockerAppData/photoprismdocker/storage",
+      "container": "/photoprism/storage"
+    },
+    {
+      "host": "/Volume1/DockerAppData/photoprismdocker/originals",
+      "container": "/photoprism/originals"
+    },
+    {
+      "host": "/Volume1/DockerAppData/photoprismdocker/import",
+      "container": "/photoprism/import"
+    }
+  ],
+  "env": {
+    "TZ": "Asia/Shanghai"
+  },
+  "healthcheck": [
+    "CMD-SHELL",
+    "curl -s -o /dev/null http://127.0.0.1:2342/ || exit 1"
+  ],
+  "healthcheck_interval": "30s",
+  "healthcheck_timeout": "10s",
+  "healthcheck_retries": 3,
+  "healthcheck_start_period": "60s",
+  "auth": "photoprism",
+  "upstream_url": "https://github.com/photoprism/photoprism",
+  "upstream_license": "AGPL-3.0",
+  "license": "AGPL-3.0",
+  "descript": "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start.",
+  "release_note": "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap.",
+  "important": "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN.",
+  "translations": {
+    "zh-cn": {
+      "descript": "PhotoPrism 是一个自托管的照片与视频库，带 AI 搜索。把原始照片放进指定目录，它会建立索引、识别人脸/物体/地点，并在浏览器里浏览、搜索、打标签和分享。本应用使用 Docker Hub 官方镜像并以非 root 用户运行；原图与索引都保存在应用数据目录，首次启动会自动生成管理员密码。",
+      "important": "登录账号 admin，随机密码见 docker logs photoprismdocker 或 DockerAppData/photoprismdocker/storage/admin-password.txt，登录后请在设置里修改。照片放到 DockerAppData/photoprismdocker/originals，导入目录为 .../import。需要 DockerEngine；无法访问 Docker Hub 时请先配置镜像加速。卸载并删除数据前请备份 storage 与 originals。应用通过局域网 HTTP 访问。",
+      "release_note": "1. 首个版本：PhotoPrism 261029，来自 Docker Hub，x86_64 + aarch64 双包，非 root，首次启动自动生成管理员密码。"
+    },
+    "zh-hk": {
+      "descript": "PhotoPrism 是一個自託管的照片與影片庫，帶 AI 搜尋。把原始照片放進指定目錄，它會建立索引、識別人臉/物體/地點，並在瀏覽器裡瀏覽、搜尋、標籤和分享。本應用使用 Docker Hub 官方鏡像並以非 root 使用者運行；原圖與索引都保存在應用資料目錄，首次啟動會自動生成管理員密碼。",
+      "important": "登入帳號 admin，隨機密碼見 docker logs photoprismdocker 或 DockerAppData/photoprismdocker/storage/admin-password.txt，登入後請在設定裡修改。照片放到 DockerAppData/photoprismdocker/originals，匯入目錄為 .../import。需要 DockerEngine；無法存取 Docker Hub 時請先設定鏡像加速。解除安裝並刪除資料前請備份 storage 與 originals。應用透過局域網 HTTP 存取。",
+      "release_note": "1. 首個版本：PhotoPrism 261029，來自 Docker Hub，x86_64 + aarch64 雙包，非 root，首次啟動自動生成管理員密碼。"
+    }
+  },
+  "data_notes": "Three mounted folders: `storage` holds the index database, settings, cache and the generated admin password; `originals` is the photo/video library the app indexes and serves; `import` is an optional drop folder for bulk imports. Copying `storage` and `originals` is a complete backup.",
+  "design_notes": [
+    "**Admin password bootstrap.** The image does not create an admin when `PHOTOPRISM_ADMIN_PASSWORD` is empty. `src/entrypoint.sh` generates a random password once and stores it in the storage volume, then execs the original `/init`.",
+    "**Non-root.** The container runs as `1000:1000`; verified on real hardware that `/init` and the PhotoPrism server work unprivileged.",
+    "**Three volumes, one port.** `storage` + `originals` + `import`; only the web UI port 2342 is published.",
+    "**Health check** probes `/` on 2342; PhotoPrism answers with a 307 redirect to the login page.",
+    "**Fixed image tag**, Docker Hub only, no `privileged`, no host network, no Docker socket."
+  ],
+  "limitations": [
+    "AI face/object recognition runs on the CPU by default. Large libraries need RAM and CPU; GPU acceleration is not enabled by this package.",
+    "The app does not create a photo library. Put your photos into `originals` (or use the import folder); otherwise the library stays empty.",
+    "The first admin password is generated on first start. If you lose it, read the file in `storage` or reset it from the container command line; changing it in Settings is recommended.",
+    "Plain HTTP on the LAN; do not expose the published port to the internet without a TLS reverse proxy.",
+    "One library per instance: the container mounts a single `originals` folder."
+  ],
+  "runtime_files": [
+    {
+      "path": "storage/index.db",
+      "purpose": "PhotoPrism index database (photos, faces, labels, albums)",
+      "created": "first start",
+      "growth": "grows with the library",
+      "lifecycle": "never overwritten; back it up with storage"
+    },
+    {
+      "path": "storage/config/settings.yml",
+      "purpose": "application settings",
+      "created": "first start",
+      "growth": "small",
+      "lifecycle": "never overwritten; edit in the UI"
+    },
+    {
+      "path": "storage/admin-password.txt",
+      "purpose": "generated first administrator password",
+      "created": "first start",
+      "growth": "static",
+      "lifecycle": "never overwritten; delete only when resetting the admin account"
+    },
+    {
+      "path": "originals",
+      "purpose": "original photos and videos",
+      "created": "by the user",
+      "growth": "grows with every added photo/video",
+      "lifecycle": "owned by the user; back it up with storage"
+    },
+    {
+      "path": "import",
+      "purpose": "optional bulk-import drop folder",
+      "created": "first start",
+      "growth": "transient",
+      "lifecycle": "clear it after imports"
+    }
+  ],
+  "official": "https://github.com/photoprism/photoprism",
+  "help": "https://github.com/Moechz/photoprism/issues",
+  "platform": "x86_64",
+  "publisher": "Moechz",
+  "compose_project": "photoprismdocker",
+  "upstream_version": "261029",
+  "release_tag_prefix": "v",
+  "version": "261029-1",
+  "docker_socket": false,
+  "group_add": []
+}

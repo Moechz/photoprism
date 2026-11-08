@@ -1,0 +1,195 @@
+# ===========================================================================
+# Multilingual file for the TOS 7 Docker application "photoprismdocker".
+# File name MUST be: <appid>.lang.  23-language superset (14 required by TOS).
+# The App Center picks the text matching the user's device language;
+# untranslated nodes fall back to English, which the official guide allows.
+# Fields: name (app title), auth (upstream author), descript (up to 512
+# chars), release_note, important (up to 512 chars).
+# Translations come from tosapp.json "translations"; run
+#   tosdocker lang <app>          to re-render this file
+#   tosdocker translate <app>     to see what still needs translating
+# ===========================================================================
+[en-us]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[zh-cn]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism 是一个自托管的照片与视频库，带 AI 搜索。把原始照片放进指定目录，它会建立索引、识别人脸/物体/地点，并在浏览器里浏览、搜索、打标签和分享。本应用使用 Docker Hub 官方镜像并以非 root 用户运行；原图与索引都保存在应用数据目录，首次启动会自动生成管理员密码。"
+release_note = "1. 首个版本：PhotoPrism 261029，来自 Docker Hub，x86_64 + aarch64 双包，非 root，首次启动自动生成管理员密码。"
+important    = "登录账号 admin，随机密码见 docker logs photoprismdocker 或 DockerAppData/photoprismdocker/storage/admin-password.txt，登录后请在设置里修改。照片放到 DockerAppData/photoprismdocker/originals，导入目录为 .../import。需要 DockerEngine；无法访问 Docker Hub 时请先配置镜像加速。卸载并删除数据前请备份 storage 与 originals。应用通过局域网 HTTP 访问。"
+
+[zh-hk]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism 是一個自託管的照片與影片庫，帶 AI 搜尋。把原始照片放進指定目錄，它會建立索引、識別人臉/物體/地點，並在瀏覽器裡瀏覽、搜尋、標籤和分享。本應用使用 Docker Hub 官方鏡像並以非 root 使用者運行；原圖與索引都保存在應用資料目錄，首次啟動會自動生成管理員密碼。"
+release_note = "1. 首個版本：PhotoPrism 261029，來自 Docker Hub，x86_64 + aarch64 雙包，非 root，首次啟動自動生成管理員密碼。"
+important    = "登入帳號 admin，隨機密碼見 docker logs photoprismdocker 或 DockerAppData/photoprismdocker/storage/admin-password.txt，登入後請在設定裡修改。照片放到 DockerAppData/photoprismdocker/originals，匯入目錄為 .../import。需要 DockerEngine；無法存取 Docker Hub 時請先設定鏡像加速。解除安裝並刪除資料前請備份 storage 與 originals。應用透過局域網 HTTP 存取。"
+
+[fr-fr]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[de-de]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[it-it]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[es-es]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[hu-hu]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[ja-jp]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[ko-kr]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[pl-pl]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[ru-ru]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[tr-tr]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[pt-pt]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[ar-sa]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[cs-cz]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[he-il]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[id-id]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[nb-no]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[nl-nl]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[sv-se]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[th-th]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
+[vi-vn]
+name         = "PhotoPrism"
+auth         = "photoprism"
+version      = "@@VERSION@@"
+descript     = "PhotoPrism is a self-hosted photo and video library with AI-powered search. Point it at a folder of originals and it indexes your media, recognises faces, objects and places, and lets you browse, search, tag and share from a clean web UI. This package runs the official Docker Hub image as a non-root container, keeps originals and the index in the application data folder, and creates a random administrator password on first start."
+release_note = "1. First release: PhotoPrism 261029 from Docker Hub, x86_64 + aarch64, non-root, with automatic administrator password bootstrap."
+important    = "Login: admin plus the random password printed by docker logs photoprismdocker and stored in DockerAppData/photoprismdocker/storage/admin-password.txt - change it in Settings. Put photos in DockerAppData/photoprismdocker/originals; the import folder is .../import. Needs DockerEngine; add a registry mirror if Docker Hub is unreachable. Back up storage and originals before uninstalling with data removal. Plain HTTP on the LAN."
+
