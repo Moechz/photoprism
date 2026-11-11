@@ -119,5 +119,9 @@
   "release_tag_prefix": "v",
   "version": "261029-2",
   "docker_socket": false,
-  "group_add": []
+  "group_add": [],
+  "platforms": [
+    "x86_64",
+    "aarch64"
+  ]
 }
