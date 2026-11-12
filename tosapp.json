@@ -117,7 +117,7 @@
   "compose_project": "photoprismdocker",
   "upstream_version": "261029",
   "release_tag_prefix": "v",
-  "version": "261029-2",
+  "version": "261029-3",
   "docker_socket": false,
   "group_add": [],
   "platforms": [
